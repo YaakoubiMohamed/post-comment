@@ -16,7 +16,7 @@ Comment.belongsTo(User, { foreignKey: 'user_id' });
 Post.hasMany(Comment, { foreignKey: 'post_id', onDelete: 'CASCADE' });
 Comment.belongsTo(Post, { foreignKey: 'post_id' });
 
-sequelize.sync({ force: true })
+sequelize.sync({ force: false })
     .then(() => {
         console.log('Database & tables created!');
     })
